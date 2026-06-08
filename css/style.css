@@ -1,0 +1,118 @@
+body {
+    margin: 0;   /* Remove as margens padrão que o navegador cria, colando o site nas bordas da tela */
+    padding: 0;  /* Remove preenchimentos internos padrão do navegador */
+    display: flex;  /* Transforma o corpo do site em um container Flexbox (permite alinhar os blocos principais) */
+    flex-direction: column;  /* Organiza os filhos diretos (header, main, footer) em linha vertical (um embaixo do outro) */
+    min-height: 100vh;  /* Força o site a ter, no mínimo, a altura total da tela visível do usuário */
+    font-family: Arial, sans-serif; /* Define a tipografia do site; se o computador não tiver Arial, usa qualquer uma sem serifa */
+}
+
+main {
+    flex: 1;  /* Funciona como uma mola: cresce o máximo que puder para preencher o espaço vazio, empurrando o footer pro final */
+}
+
+header {
+    position: sticky;               /* Faz o cabeçalho "grudar" na tela quando o usuário rolar a página para baixo */
+    top: 0;                         /* Determina que o cabeçalho deve fixar exatamente no teto (topo zero) da tela */
+    z-index: 1000;                  /* Cria uma "camada" alta para garantir que o menu passe por cima de qualquer imagem ou texto */
+}
+
+nav {
+    background-color: #4da92b;      /* Aplica o verde principal (extraído da logo) como cor de fundo do menu superior */
+    padding: 12px 50px;             /* Espaçamento interno: 12px acima/abaixo (deixando o menu fino) e 50px nas laterais */
+}
+
+footer {
+    background-color: #377d1e;      /* Aplica um tom de verde médio/escuro no fundo do rodapé */
+    color: white;                   /* Força todos os textos diretos dentro do rodapé a ficarem brancos */
+    display: flex;                  /* Transforma o rodapé em um container Flexbox para alinhar as colunas */
+    flex-wrap: wrap;                /* Permite que elementos muito largos (como a barra de direitos) quebrem para a linha de baixo */
+    justify-content: space-around;  /* Distribui o espaço horizontal sobrando, deixando as colunas separadas de forma elegante */
+    align-items: flex-start;        /* Alinha o topo das colunas do rodapé horizontalmente */
+    padding-top: 40px;              /* Adiciona um espaço de 40px interno no topo do rodapé para o texto não começar colado na borda */
+}
+
+footer h3 {
+    margin-top: 0;                  /* Zera a margem superior padrão do h3 para não desalinhar o topo das colunas */
+    border-bottom: 2px solid white; /* Cria uma linha decorativa branca de 2 pixels de espessura logo abaixo do texto do título */
+    padding-bottom: 5px;            /* Cria um espaço de 5px entre a base das letras e a linha decorativa branca */
+    display: inline-block;          /* Faz com que a linha decorativa se ajuste exatamente ao tamanho do texto, em vez de cruzar a tela toda */
+}
+
+
+.coluna-menu, 
+.coluna-contato {
+    margin-bottom: 30px;            /* Margem inferior de 30px para que as colunas não fiquem espremidas contra a barra escura de direitos autorais */
+}
+
+.coluna-menu ul {
+    list-style: none;               /* Remove as "bolinhas" pretas que o navegador coloca por padrão em listas */
+    padding: 0;                     /* Zera o recuo/espaçamento esquerdo que as listas ganham automaticamente */
+    margin: 0;                      /* Zera as margens padrão da lista */
+}
+
+.coluna-menu li {
+    margin-bottom: 10px;            /* Cria um espaçamento de 10px entre um link do menu e o de baixo */
+}
+
+.coluna-menu a {
+    color: white;                   /* Deixa o texto dos links do rodapé na cor branca */
+    text-decoration: none;          /* Remove o sublinhado padrão dos links */
+}
+
+.coluna-menu a:hover {
+    text-decoration: underline;     /* Adiciona o sublinhado de volta, mas apenas quando o usuário passa o mouse por cima do link */
+}
+
+.coluna-contato {
+    font-style: normal;             /* Desativa o comportamento padrão dos navegadores que deixa a tag <address> inteira em itálico */
+}
+
+.coluna-contato img {
+    height: 60px;                   /* Fixa a altura da logo no rodapé em 60px, mantendo o tamanho controlado */
+    width: auto;                    /* Faz a largura se ajustar sozinha, impedindo que a imagem fique achatada ou esticada */
+    display: block;                 /* Transforma a imagem em um bloco para que ela quebre a linha sozinha e aceite margens corretamente */
+    margin-bottom: 20px;            /* Cria uma distância de 20px entre a base da logo e o título "Fale Conosco" */
+}
+
+.footer-direitos {
+    width: 100%;                    /* Força o parágrafo a ocupar 100% da largura horizontal, obrigando-o a cair para a última linha isolado */
+    text-align: center;             /* Centraliza o texto dos direitos autorais horizontalmente na tela */
+    background-color: #2c6418;      /* Aplica o tom de verde mais escuro do site para dar o acabamento final na página */
+    padding: 15px 0;                /* Adiciona um espaço interno de 15px acima e abaixo do texto */
+    margin: 0;                      /* Zera a margem padrão do parágrafo, impedindo que surjam frestas brancas indesejadas */
+    font-size: 14px;                /* Reduz o tamanho da fonte para que os direitos autorais fiquem discretos */
+}
+
+
+/* ==========================================================================
+   NÍVEL 4: SELETORES DE ID E ELEMENTOS ANINHADOS (Mais Específicos)
+   Regras cirúrgicas e de alto peso, focadas exclusivamente na barra de navegação do topo.
+   ========================================================================== */
+
+#lista-menu-principal {
+    display: flex;                  /* Transforma a lista do menu em Flexbox, fazendo os itens <li> ficarem lado a lado */
+    justify-content: flex-start;    /* Alinha todos os itens (logo e links) a partir da extremidade esquerda */
+    align-items: center;            /* Alinha os textos e a logo perfeitamente centralizados na mesma linha horizontal */
+    list-style: none;               /* Remove as bolinhas padrão da lista do topo */
+    margin: 0;                      /* Zera as margens da lista do menu */
+    padding: 0;                     /* Zera o espaçamento interno da lista do menu */
+    gap: 35px;                      /* Cria uma separação uniforme e exata de 35px entre cada palavra/item do menu */
+}
+
+#lista-menu-principal a {
+    color: white;                   /* Garante que os links principais do topo sejam brancos */
+    text-decoration: none;          /* Remove o sublinhado dos links do topo */
+    font-weight: bold;              /* Aplica o efeito de negrito nas letras do menu */
+    font-size: 20px;                /* Ajusta o tamanho da fonte para um tamanho de leitura confortável no topo */
+}
+
+#lista-menu-principal a:hover {
+    text-decoration: underline;     /* Adiciona o sublinhado nos botões do topo somente quando o mouse estiver sobre eles */
+}
+
+#lista-menu-principal img {
+    height: 50px;                   /* Define o limite máximo da altura da logo no topo para 50px, harmonizando com o menu mais fino */
+    width: auto;                    /* Garante a proporção matemática perfeita da largura da imagem */
+    display: block;                 /* Define a imagem como bloco para evitar espaçamentos fantasmas que o navegador insere embaixo de elementos inline */
+}
