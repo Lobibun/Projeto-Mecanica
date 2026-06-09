@@ -1,8 +1,13 @@
-<!doctype html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <meta name="description" content="Encontre as melhores ofertas da semana no Mercado Arceno 2 em Balneário Rincão - SC. Padaria com pão quentinho, hortifrúti fresco e bebidas geladas. Venha conferir!" />
+        <meta name="author" content="Alan Farias Lopes, Jones Cardoso Arceno, Richard Matias Rosa De Souza" />
+        
+        <link rel="icon" type="image/png" href="img/logo.png" />
+        
         <title>Home - Mercado Arceno 2</title>
         <link rel="stylesheet" href="css/style.css" />
         <script src="js/script.js" defer></script>
@@ -25,61 +30,88 @@
         </header>
 
         <main>
-
+            <!-- Carrossel de Ofertas -->
             <section id="carrossel-ofertas">
-
                 <img src="img/Produtos0.jpg" alt="Ofertas da Semana Mercado Arceno 2 - Slide 1" class="banner-slide ativo" />
-
                 <img src="img/Produtos1.jpg" alt="Ofertas da Semana Mercado Arceno 2 - Slide 2" class="banner-slide" />
-
                 <img src="img/Produtos2.jpg" alt="Ofertas da Semana Mercado Arceno 2 - Slide 3" class="banner-slide" />
-
                 <img src="img/Produtos3.jpg" alt="Ofertas da Semana Mercado Arceno 2 - Slide 4" class="banner-slide" />
-
                 <img src="img/Produtos4.jpg" alt="Ofertas da Semana Mercado Arceno 2 - Slide 5" class="banner-slide" />
 
                 <button class="btn-carrossel prev" onclick="mudarSlide(-1)" aria-label="Slide anterior">&#10094;</button>
                 <button class="btn-carrossel next" onclick="mudarSlide(1)" aria-label="Próximo slide">&#10095;</button>
             </section>
 
+            <!-- Horários de Funcionamento (Estilo Card Premium) -->
             <section id="secao-horario">
-                <h2>🕒 Nosso Horário de Funcionamento</h2>
-                <p>Segunda a Sábado: das <time>07:30</time> às <time>19:00</time></p>
-                <p>Domingos e Feriados: das <time>07:30</time> às <time>12:00</time></p>
+                <article class="bloco-card card-unico">
+                    <span class="icone-destaque">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#377d1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </span>
+                    <h2>Horário de Funcionamento</h2>
+                    <p>Segunda a Sábado: das <time>07:30</time> às <time>19:00</time></p>
+                    <p>Domingos e Feriados: das <time>07:30</time> às <time>12:00</time></p>
+                </article>
             </section>
 
+            <!-- Setores em Destaque -->
             <section id="secao-setores">
                 <h2>O que você encontra aqui</h2>
 
                 <article class="card-setor">
                     <img src="img/padaria.svg" alt="Padaria" />
-                    <h3>Padaria</h3>
                     <p>Pão quentinho a toda hora, além de bolos e cucas artesanais.</p>
                 </article>
 
                 <article class="card-setor">
                     <img src="img/hortifruti.svg" alt="Hortifrúti" />
-                    <h3>Hortifrúti</h3>
                     <p>Frutas e verduras fresquinhas, direto do produtor para sua mesa.</p>
                 </article>
 
                 <article class="card-setor">
                     <img src="img/bebidas.svg" alt="Bebidas" />
-                    <h3>Bebidas e Adega</h3>
                     <p>Cerveja trincando e opções ideais para celebrar em qualquer estação.</p>
                 </article>
             </section>
 
+            <!-- Conveniências (Pagamento e WhatsApp) -->
             <section id="secao-conveniencias">
-                <article class="bloco-pagamento">
-                    <h2>💳 Formas de Pagamento</h2>
-                    <p>Aceitamos Pix, Dinheiro, Cartões de Crédito/Débito e as principais bandeiras de Cartão Alimentação (Sodexo, Alelo, Ticket).</p>
+                <article class="bloco-card">
+                    <span class="icone-destaque">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#377d1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </span>
+                    <h2>Formas de Pagamento</h2>
+                    <p>Facilitamos as suas compras! Aceitamos diversas formas de pagamento para sua comodidade no dia a dia.</p>
+                    
+                    <span class="tags-pagamento">
+                        <small>Pix</small>
+                        <small>Dinheiro</small>
+                        <small>Crédito/Débito</small>
+                        <small>Vale Alimentação</small>
+                    </span>
                 </article>
 
-                <article class="bloco-whatsapp">
-                    <h2>📱 Encomendas Rápidas</h2>
+                <article class="bloco-card">
+                    <span class="icone-destaque">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#377d1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </span>
+                    <h2>Encomendas Rápidas</h2>
                     <p>Quer encomendar um bolo ou separar seus produtos? Fale com a gente pelo WhatsApp!</p>
-                    <a href="https://wa.me/554834681234" target="_blank" class="botao-whatsapp">Chamar no WhatsApp</a>
+                    
+                    <a href="https://wa.me/554834681234" target="_blank" class="botao-whatsapp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.81 11.81 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/>
+                        </svg>
+                        Chamar no WhatsApp
+                    </a>
                 </article>
             </section>
         </main>
@@ -96,10 +128,10 @@
             </nav>
 
             <address class="coluna-contato">
-                <img src="img/logo.png" alt="Logo do Mercado Arceno 2" />
+                <img src="img/arceno_page-0001.jpg" alt="Logo do Mercado Arceno 2" />
                 <h3>Fale Conosco</h3>
                 <p>Endereço: Av. dos esportes, Centro - Balneário Rincão - SC</p>
-                <p>Telefone: (48) 3468-1234 | Email: contato@mercadoarceno.com.br</p>
+                <p>Telefone: (48) 3468-1234 | Email: mercadoarceno18@gmail.com</p>
             </address>
 
             <p class="footer-direitos">

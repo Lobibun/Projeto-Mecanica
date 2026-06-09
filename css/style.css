@@ -9,6 +9,7 @@ body {
     flex-direction: column;  
     min-height: 100vh;  
     font-family: Arial, sans-serif; 
+    background-color: #fbfdfa;
 }
 
 main {
@@ -29,16 +30,15 @@ nav {
     padding: 12px 50px;             
 }
 
-/* Adicionamos um respiro padrão para todas as seções (blocos) do site */
 section {
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
-/* Estilo padrão para os títulos principais das seções */
 section h2 {
     color: #377d1e;
     font-size: 32px;
     margin-top: 0;
+    text-align: center;
 }
 
 footer {
@@ -91,9 +91,22 @@ footer h3 {
     font-style: normal;             
 }
 
+.coluna-contato h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.coluna-contato p {
+    margin: 5px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ATUALIZADO: Ícone/Logo do mercado maior no rodapé */
 .coluna-contato img {
-    height: 60px;                   
-    width: auto;                    
+    width: 190px;                   
+    height: auto;                   
     display: block;                 
     margin-bottom: 20px;            
 }
@@ -107,36 +120,217 @@ footer h3 {
     font-size: 14px;                
 }
 
-/* --- Classes da Página "Sobre Nós" --- */
+/* --- Classes Compartilhadas: Cartões Premium (Horário e Conveniências) --- */
+.bloco-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    padding: 40px 30px;
+    max-width: 400px;
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    border-top: 5px solid #377d1e; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloco-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.bloco-card h2 {
+    font-size: 24px;
+    color: #377d1e;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bloco-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.bloco-card p time {
+    font-weight: bold;
+    color: #377d1e;
+}
+
+.card-unico {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.icone-destaque {
+    width: 70px;
+    height: 70px;
+    background-color: #eaf6e6; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.icone-destaque svg {
+    width: 35px;
+    height: 35px;
+}
+
+/* --- Tags de Pagamento --- */
+.tags-pagamento {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.tags-pagamento small {
+    background-color: #f3f3f3;
+    color: #444;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #e0e0e0;
+}
+
+/* --- Botão WhatsApp Estilizado --- */
+.botao-whatsapp {
+    background-color: #25D366;    
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 30px; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+}
+
+.botao-whatsapp:hover {
+    background-color: #1DA851;
+    transform: scale(1.02);
+}
+
+/* --- Classes dos Setores --- */
+.card-setor {
+    background-color: white;      
+    border-radius: 12px;          
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05); 
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #eef5ec;
+}
+
+.card-setor img {
+    width: 100%;
+    height: 140px; 
+    object-fit: contain; 
+    display: block; 
+    margin: 0 auto 15px auto; 
+}
+
+.card-setor h3 {
+    color: #377d1e;
+    font-size: 22px;
+    margin: 15px 0 10px 0;
+}
+
+.card-setor p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- CORRIGIDO E MEHORADO: Classes da Página "Sobre Nós" --- */
 .sobre-nos-geral {
     display: flex;               
-    align-items: flex-start;         
-    gap: 60px;               
-    padding: 40px 100px;        
+    align-items: center;         
+    justify-content: center;
+    gap: 70px;               
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;        
 }
 
 .sobre-nos-geral img {
     display: block;             
-    height: 600px;             
-    width: auto;                  
-    border-radius: 10px;         
-    margin : 40px 0;             
-    margin-left: 100px;         
+    width: 100%;
+    max-width: 480px;
+    height: 440px;             
+    object-fit: cover;
+    border-radius: 15px;         
+    /* Efeito de acabamento tridimensional com sombra verde sutil atrás da foto */
+    box-shadow: -15px 15px 0px #eaf6e6, 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.sobre-nos-geral img:hover {
+    transform: scale(1.01) translateY(-3px);
 }
 
 .sobre-nos-geral article {  
-    max-width: 500px;       
-    margin: 50px 0; 
+    flex: 1;
+    max-width: 580px;       
+}
+
+.sobre-nos-geral .subtitulo-sobre {
+    color: #4da92b;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sobre-nos-geral h1 {
+    color: #377d1e;
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Detalhe verde elegante na barra inferior do título principal */
+.sobre-nos-geral h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #4da92b;
+    margin-top: 8px;
+    border-radius: 2px;
 }
 
 .sobre-nos-geral p {
-    font-size: 18px;      
-    line-height: 32px;    
+    font-size: 16px;      
+    line-height: 1.8;    
     text-align: justify;  
-    color: #444;    
+    color: #555;    
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* --- Classes da Página "Contato" (Foto/Info em cima, Mapa em baixo) --- */
+.sobre-nos-geral p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Classes da Página "Contato" (Lado a Lado Separadas por Igual) --- */
 .container-contato {
     display: flex;
     flex-direction: column; 
@@ -146,48 +340,44 @@ footer h3 {
     margin: 0 auto;
 }
 
-/* Linha Superior (Caixa Verde e Foto) */
-.contato-topo {
+section.contato-topo {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
-    align-items: stretch; /* Garante que os dois lados tenham a mesma altura */
-    gap: 40px;
-    flex-wrap: wrap; 
+    align-items: stretch; 
+    gap: 40px; 
+    padding: 20px 0; 
 }
 
-.ctt-paginacontato  {
+section.ctt-paginacontato  {
     flex: 1; 
-    min-width: 300px;
     background-color: #2c6418;
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     color: white;
-    padding: 30px;
+    padding: 40px 35px; 
     box-sizing: border-box; 
-    
-    /* Organiza o texto no meio da caixa verde */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.foto-paginacontato {
+section.foto-paginacontato {
     flex: 1; 
-    min-width: 300px;
     display: flex;
+    padding: 0; 
 }
 
-.foto-paginacontato img {
+section.foto-paginacontato img {
     width: 100%;            
-    height: 100%; /* A imagem acompanha a altura exata da caixa verde */
+    height: 100%; 
+    min-height: 450px; 
     object-fit: cover; 
     border-radius: 20px;           
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
     display: block;
 }
 
-/* Linha Inferior (Mapa) */
 .contato-mapa {
     width: 100%;
 }
@@ -196,15 +386,14 @@ footer h3 {
     width: 100%;
     height: 450px; 
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
     display: block;
 }
 
-/* Estilos Internos da Caixa Verde (Títulos e Lista) */
 .ctt-paginacontato h1 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 15px;
 }
@@ -252,7 +441,7 @@ footer h3 {
     color: #4caf50;
 }
 
-/* --- Classes da Home (Carrossel, Setores, WhatsApp) --- */
+/* --- Classes do Carrossel --- */
 .banner-slide {
     width: 100%;                  
     height: 100%;            
@@ -287,66 +476,9 @@ footer h3 {
     z-index: 10;
 }
 
-.btn-carrossel.prev {
-    left: 0;
-    border-radius: 0 5px 5px 0;
-}
-
-.btn-carrossel.next {
-    right: 0;
-    border-radius: 5px 0 0 5px;
-}
-
-.btn-carrossel:hover {
-    background-color: rgba(77, 169, 43, 0.9);
-}
-
-.aviso-verao {
-    color: #e65100;               
-    font-weight: bold;
-}
-
-.card-setor {
-    background-color: white;      
-    border-radius: 10px;          
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    padding: 20px;
-    text-align: center;
-}
-
-.card-setor img {
-    width: 100%;
-    height: 160px; /* Altura ajustada para os ícones */
-    object-fit: contain; /* Garante que a imagem caiba inteira sem cortar */
-    display: block; 
-    margin: 0 auto 15px auto; /* Centraliza perfeitamente */
-}
-
-.card-setor h3 {
-    color: #377d1e;
-    margin: 15px 0 5px 0;
-}
-
-.bloco-pagamento, .bloco-whatsapp {
-    max-width: 400px;             
-}
-
-.botao-whatsapp {
-    background-color: #25D366;    
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 8px;           
-    display: inline-block;        
-    margin-top: 15px;
-    transition: background-color 0.3s; 
-}
-
-.botao-whatsapp:hover {
-    background-color: #1DA851;    
-}
+.btn-carrossel.prev { left: 0; border-radius: 0 5px 5px 0; }
+.btn-carrossel.next { right: 0; border-radius: 5px 0 0 5px; }
+.btn-carrossel:hover { background-color: rgba(77, 169, 43, 0.9); }
 
 /* ==========================================================================
    NÍVEL 4: SELETORES DE ID E ELEMENTOS ANINHADOS (Mais Específicos)
@@ -388,8 +520,6 @@ footer h3 {
     height: 500px;
     max-height: 450px;
     overflow: hidden;
-    
-    /* MISTURA DO DEGRADÊ COM AS BOLINHAS */
     background-color: #4da92b;
     background-image: 
         linear-gradient(to bottom, #4da92b 0%, #cccccc 100%), 
@@ -399,14 +529,14 @@ footer h3 {
 }
 
 #secao-horario {
-    text-align: center;             
-    background-color: #f9f9f9;      
+    background-color: #f3f9f1;
+    display: flex;
+    justify-content: center;
 }
 
-/* --- Setores (Esquerda, Centro, Direita) --- */
 #secao-setores {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;                      
     max-width: 1200px;              
     margin: 0 auto;                 
@@ -414,22 +544,137 @@ footer h3 {
 
 #secao-setores h2 {
     grid-column: 1 / -1;            
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Proteção para Celulares: Se a tela for pequena, coloca um cartão por linha */
-@media (max-width: 800px) {
-    #secao-setores {
-        grid-template-columns: 1fr; 
-    }
+    margin-bottom: 30px;
 }
 
 #secao-conveniencias {
     background-color: #f4fdf0;      
     display: flex;
-    justify-content: space-around;  
+    justify-content: center; 
+    align-items: stretch;
     flex-wrap: wrap;                
-    gap: 30px;
-    text-align: center;
+    gap: 40px;
+}
+
+/* ==========================================================================
+   NÍVEL 5: MEDIA QUERIES (Responsividade para Celulares e Tablets)
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Ajustes Gerais */
+    section {
+        padding: 40px 15px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    /* Menu de Navegação Superior */
+    nav {
+        padding: 15px 20px;
+    }
+
+    #lista-menu-principal {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    #lista-menu-principal a {
+        font-size: 16px;
+    }
+
+    /* Carrossel Reduzido */
+    #carrossel-ofertas {
+        height: 300px;
+    }
+
+    .btn-carrossel {
+        font-size: 20px;
+        padding: 10px 12px;
+    }
+
+    /* Grid de Setores vira 1 coluna */
+    #secao-setores {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    /* ATUALIZADO: Responsividade refinada da Seção Sobre Nós */
+    .sobre-nos-geral {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 35px;
+    }
+
+    .sobre-nos-geral img {
+        height: 300px;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Remove a sombra tridimensional no mobile para centralizar perfeitamente */
+    }
+
+    .sobre-nos-geral article {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .sobre-nos-geral h1::after {
+        margin: 8px auto 0 auto; /* Centraliza a linha decorativa do h1 no mobile */
+    }
+
+    .sobre-nos-geral p {
+        text-align: justify; /* Mantém o alinhamento justificado do texto no tablet */
+    }
+
+    /* Comportamento responsivo perfeito para as duas caixas separadas do contato */
+    section.contato-topo {
+        flex-direction: column; 
+        gap: 30px;
+        padding: 0;
+    }
+
+    section.ctt-paginacontato {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    section.foto-paginacontato {
+        width: 100%;
+    }
+
+    section.foto-paginacontato img {
+        height: 350px;
+        min-height: auto;
+    }
+
+    .contato-mapa iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #carrossel-ofertas {
+        height: 200px;
+    }
+
+    .bloco-card {
+        padding: 30px 20px;
+    }
+
+    .sobre-nos-geral p {
+        text-align: left; /* No celular bem pequeno o texto corrido à esquerda lê melhor */
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px 0 15px;
+    }
+
+    .coluna-contato img {
+        margin: 0 auto 20px auto;
+        width: 160px;
+    }
 }
