@@ -1,143 +1,435 @@
+/* ==========================================================================
+   NÍVEL 1: SELETORES GLOBAIS E ESTRUTURA BASE (Mais Genéricos)
+   Se aplicam à página inteira e servem como a fundação do layout.
+   ========================================================================== */
 body {
-    margin: 0;   /* Remove as margens padrão que o navegador cria, colando o site nas bordas da tela */
-    padding: 0;  /* Remove preenchimentos internos padrão do navegador */
-    display: flex;  /* Transforma o corpo do site em um container Flexbox (permite alinhar os blocos principais) */
-    flex-direction: column;  /* Organiza os filhos diretos (header, main, footer) em linha vertical (um embaixo do outro) */
-    min-height: 100vh;  /* Força o site a ter, no mínimo, a altura total da tela visível do usuário */
-    font-family: Arial, sans-serif; /* Define a tipografia do site; se o computador não tiver Arial, usa qualquer uma sem serifa */
+    margin: 0;   
+    padding: 0;  
+    display: flex;  
+    flex-direction: column;  
+    min-height: 100vh;  
+    font-family: Arial, sans-serif; 
 }
 
 main {
-    flex: 1;  /* Funciona como uma mola: cresce o máximo que puder para preencher o espaço vazio, empurrando o footer pro final */
+    flex: 1;  
 }
 
+/* ==========================================================================
+   NÍVEL 2: SELETORES DE TAGS PURAS (Especificidade Baixa)
+   ========================================================================== */
 header {
-    position: sticky;               /* Faz o cabeçalho "grudar" na tela quando o usuário rolar a página para baixo */
-    top: 0;                         /* Determina que o cabeçalho deve fixar exatamente no teto (topo zero) da tela */
-    z-index: 1000;                  /* Cria uma "camada" alta para garantir que o menu passe por cima de qualquer imagem ou texto */
+    position: sticky;               
+    top: 0;                         
+    z-index: 1000;                  
 }
 
 nav {
-    background-color: #4da92b;      /* Aplica o verde principal (extraído da logo) como cor de fundo do menu superior */
-    padding: 12px 50px;             /* Espaçamento interno: 12px acima/abaixo (deixando o menu fino) e 50px nas laterais */
+    background-color: #4da92b;      
+    padding: 12px 50px;             
+}
+
+/* Adicionamos um respiro padrão para todas as seções (blocos) do site */
+section {
+    padding: 50px 20px;
+}
+
+/* Estilo padrão para os títulos principais das seções */
+section h2 {
+    color: #377d1e;
+    font-size: 32px;
+    margin-top: 0;
 }
 
 footer {
-    background-color: #377d1e;      /* Aplica um tom de verde médio/escuro no fundo do rodapé */
-    color: white;                   /* Força todos os textos diretos dentro do rodapé a ficarem brancos */
-    display: flex;                  /* Transforma o rodapé em um container Flexbox para alinhar as colunas */
-    flex-wrap: wrap;                /* Permite que elementos muito largos (como a barra de direitos) quebrem para a linha de baixo */
-    justify-content: space-around;  /* Distribui o espaço horizontal sobrando, deixando as colunas separadas de forma elegante */
-    align-items: flex-start;        /* Alinha o topo das colunas do rodapé horizontalmente */
-    padding-top: 40px;              /* Adiciona um espaço de 40px interno no topo do rodapé para o texto não começar colado na borda */
+    background-color: #377d1e;      
+    color: white;                   
+    display: flex;                  
+    flex-wrap: wrap;                
+    justify-content: space-around;  
+    align-items: flex-start;        
+    padding-top: 40px;              
 }
 
 footer h3 {
-    margin-top: 0;                  /* Zera a margem superior padrão do h3 para não desalinhar o topo das colunas */
-    border-bottom: 2px solid white; /* Cria uma linha decorativa branca de 2 pixels de espessura logo abaixo do texto do título */
-    padding-bottom: 5px;            /* Cria um espaço de 5px entre a base das letras e a linha decorativa branca */
-    display: inline-block;          /* Faz com que a linha decorativa se ajuste exatamente ao tamanho do texto, em vez de cruzar a tela toda */
+    margin-top: 0;                  
+    border-bottom: 2px solid white; 
+    padding-bottom: 5px;            
+    display: inline-block;          
 }
 
+/* ==========================================================================
+   NÍVEL 3: SELETORES DE CLASSES (Especificidade Média)
+   ========================================================================== */
 
+/* --- Classes do Rodapé --- */
 .coluna-menu, 
 .coluna-contato {
-    margin-bottom: 30px;            /* Margem inferior de 30px para que as colunas não fiquem espremidas contra a barra escura de direitos autorais */
+    margin-bottom: 30px;            
 }
 
 .coluna-menu ul {
-    list-style: none;               /* Remove as "bolinhas" pretas que o navegador coloca por padrão em listas */
-    padding: 0;                     /* Zera o recuo/espaçamento esquerdo que as listas ganham automaticamente */
-    margin: 0;                      /* Zera as margens padrão da lista */
+    list-style: none;               
+    padding: 0;                     
+    margin: 0;                      
 }
 
 .coluna-menu li {
-    margin-bottom: 10px;            /* Cria um espaçamento de 10px entre um link do menu e o de baixo */
+    margin-bottom: 10px;            
 }
 
 .coluna-menu a {
-    color: white;                   /* Deixa o texto dos links do rodapé na cor branca */
-    text-decoration: none;          /* Remove o sublinhado padrão dos links */
+    color: white;                   
+    text-decoration: none;          
 }
 
 .coluna-menu a:hover {
-    text-decoration: underline;     /* Adiciona o sublinhado de volta, mas apenas quando o usuário passa o mouse por cima do link */
+    text-decoration: underline;     
 }
 
 .coluna-contato {
-    font-style: normal;             /* Desativa o comportamento padrão dos navegadores que deixa a tag <address> inteira em itálico */
+    font-style: normal;             
 }
 
 .coluna-contato img {
-    height: 60px;                   /* Fixa a altura da logo no rodapé em 60px, mantendo o tamanho controlado */
-    width: auto;                    /* Faz a largura se ajustar sozinha, impedindo que a imagem fique achatada ou esticada */
-    display: block;                 /* Transforma a imagem em um bloco para que ela quebre a linha sozinha e aceite margens corretamente */
-    margin-bottom: 20px;            /* Cria uma distância de 20px entre a base da logo e o título "Fale Conosco" */
+    height: 60px;                   
+    width: auto;                    
+    display: block;                 
+    margin-bottom: 20px;            
 }
 
 .footer-direitos {
-    width: 100%;                    /* Força o parágrafo a ocupar 100% da largura horizontal, obrigando-o a cair para a última linha isolado */
-    text-align: center;             /* Centraliza o texto dos direitos autorais horizontalmente na tela */
-    background-color: #2c6418;      /* Aplica o tom de verde mais escuro do site para dar o acabamento final na página */
-    padding: 15px 0;                /* Adiciona um espaço interno de 15px acima e abaixo do texto */
-    margin: 0;                      /* Zera a margem padrão do parágrafo, impedindo que surjam frestas brancas indesejadas */
-    font-size: 14px;                /* Reduz o tamanho da fonte para que os direitos autorais fiquem discretos */
+    width: 100%;                    
+    text-align: center;             
+    background-color: #2c6418;      
+    padding: 15px 0;                
+    margin: 0;                      
+    font-size: 14px;                
 }
 
+/* --- Classes da Página "Sobre Nós" --- */
 .sobre-nos-geral {
-    display: flex;               /* Transforma a seção "Sobre Nós" em um container Flexbox para alinhar a imagem e o texto lado a lado */
-    align-items: flex-start;         /* Alinha verticalmente a imagem e o texto ao centro, garantindo que fiquem harmoniosos mesmo com alturas diferentes */
-    gap: 60px;               /* Cria um espaço de 30px entre a imagem e o texto, evitando que fiquem colados um no outro */
-    padding: 40px 100px;        /* Adiciona um espaçamento interno de 40px acima/abaixo e 100px nas laterais para dar respiro ao conteúdo */
+    display: flex;               
+    align-items: flex-start;         
+    gap: 60px;               
+    padding: 40px 100px;        
 }
 
 .sobre-nos-geral img {
-    wdisplay: block;               /* Define a imagem como bloco para evitar espaçamentos fantasmas que o navegador insere embaixo de elementos inline */
-    height: 600px;             /* Define a altura da imagem para 600px, garantindo que ela seja grande o suficiente para destacar a fachada do mercado */ 
-    width: auto;                  /* Garante a proporção matemática perfeita da largura da imagem, evitando distorções */
-    border-radius: 10px;         /* Adiciona cantos arredondados de 10px na imagem para um visual mais moderno e suave */
-    margin : 40px 0;             /* Zera a margem padrão do parágrafo, impedindo que surjam frestas brancas indesejadas */
-    margin-left: 100px;         /* Adiciona uma margem esquerda de 100px para afastar a imagem do menu superior e criar um alinhamento visual mais agradável */
+    display: block;             
+    height: 600px;             
+    width: auto;                  
+    border-radius: 10px;         
+    margin : 40px 0;             
+    margin-left: 100px;         
 }
 
 .sobre-nos-geral article {  
-    max-width: 500px;       /* Limita a largura máxima do texto para 500px, evitando que ele se estenda demais e fique difícil de ler */
+    max-width: 500px;       
     margin: 50px 0; 
 }
+
 .sobre-nos-geral p {
-    font-size: 18px;      /* Aumenta o tamanho da fonte para 18px, tornando o texto mais legível e confortável para leitura */
-    line-height: 32px;    /* Define a altura da linha para 32px, criando um espaçamento vertical entre as linhas que melhora a legibilidade e evita que o texto fique amontoado */
-    text-align: justify;  /* Justifica o texto, alinhando as margens esquerda e direita para criar um bloco de texto mais uniforme e esteticamente agradável */
-    color: #444;    /* Aplica um tom de cinza escuro ao texto para reduzir o contraste agressivo do preto puro, tornando a leitura mais confortável para os olhos */
+    font-size: 18px;      
+    line-height: 32px;    
+    text-align: justify;  
+    color: #444;    
 }
+
+/* --- Classes da Página "Contato" (Foto/Info em cima, Mapa em baixo) --- */
+.container-contato {
+    display: flex;
+    flex-direction: column; 
+    gap: 40px; 
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Linha Superior (Caixa Verde e Foto) */
+.contato-topo {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: stretch; /* Garante que os dois lados tenham a mesma altura */
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+.ctt-paginacontato  {
+    flex: 1; 
+    min-width: 300px;
+    background-color: #2c6418;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 30px;
+    box-sizing: border-box; 
+    
+    /* Organiza o texto no meio da caixa verde */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foto-paginacontato {
+    flex: 1; 
+    min-width: 300px;
+    display: flex;
+}
+
+.foto-paginacontato img {
+    width: 100%;            
+    height: 100%; /* A imagem acompanha a altura exata da caixa verde */
+    object-fit: cover; 
+    border-radius: 20px;           
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    display: block;
+}
+
+/* Linha Inferior (Mapa) */
+.contato-mapa {
+    width: 100%;
+}
+
+.contato-mapa iframe {
+    width: 100%;
+    height: 450px; 
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Estilos Internos da Caixa Verde (Títulos e Lista) */
+.ctt-paginacontato h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.Listactt-paginacontato {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Listactt-paginacontato li {
+    display: flex;       
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.Listactt-paginacontato li:last-child {
+    margin-bottom: 0;
+}
+
+.Listactt-paginacontato li i  {
+    color: #4caf50;      
+    font-size: 22px;     
+    margin-right: 15px;  
+    width: 30px;         
+    text-align: center;  
+}
+
+.Listactt-paginacontato li p {
+    margin: 0;           
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.link-contato {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;      
+    width: 100%;
+}
+
+.link-contato:hover p {
+    text-decoration: underline; 
+    color: #4caf50;
+}
+
+/* --- Classes da Home (Carrossel, Setores, WhatsApp) --- */
+.banner-slide {
+    width: 100%;                  
+    height: 100%;            
+    object-fit: contain; 
+    background-color: transparent; 
+    display: none; 
+    animation: fade 0.8s ease-in-out;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.12));
+}
+
+.banner-slide.ativo {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.btn-carrossel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+    z-index: 10;
+}
+
+.btn-carrossel.prev {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.btn-carrossel.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.btn-carrossel:hover {
+    background-color: rgba(77, 169, 43, 0.9);
+}
+
+.aviso-verao {
+    color: #e65100;               
+    font-weight: bold;
+}
+
+.card-setor {
+    background-color: white;      
+    border-radius: 10px;          
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    padding: 20px;
+    text-align: center;
+}
+
+.card-setor img {
+    width: 100%;
+    height: 160px; /* Altura ajustada para os ícones */
+    object-fit: contain; /* Garante que a imagem caiba inteira sem cortar */
+    display: block; 
+    margin: 0 auto 15px auto; /* Centraliza perfeitamente */
+}
+
+.card-setor h3 {
+    color: #377d1e;
+    margin: 15px 0 5px 0;
+}
+
+.bloco-pagamento, .bloco-whatsapp {
+    max-width: 400px;             
+}
+
+.botao-whatsapp {
+    background-color: #25D366;    
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;           
+    display: inline-block;        
+    margin-top: 15px;
+    transition: background-color 0.3s; 
+}
+
+.botao-whatsapp:hover {
+    background-color: #1DA851;    
+}
+
 /* ==========================================================================
    NÍVEL 4: SELETORES DE ID E ELEMENTOS ANINHADOS (Mais Específicos)
-   Regras cirúrgicas e de alto peso, focadas exclusivamente na barra de navegação do topo.
    ========================================================================== */
 
+/* --- Menu Superior --- */
 #lista-menu-principal {
-    display: flex;                  /* Transforma a lista do menu em Flexbox, fazendo os itens <li> ficarem lado a lado */
-    justify-content: flex-start;    /* Alinha todos os itens (logo e links) a partir da extremidade esquerda */
-    align-items: center;            /* Alinha os textos e a logo perfeitamente centralizados na mesma linha horizontal */
-    list-style: none;               /* Remove as bolinhas padrão da lista do topo */
-    margin: 0;                      /* Zera as margens da lista do menu */
-    padding: 0;                     /* Zera o espaçamento interno da lista do menu */
-    gap: 35px;                      /* Cria uma separação uniforme e exata de 35px entre cada palavra/item do menu */
+    display: flex;                  
+    justify-content: flex-start;    
+    align-items: center;            
+    list-style: none;               
+    margin: 0;                      
+    padding: 0;                     
+    gap: 35px;                      
 }
 
 #lista-menu-principal a {
-    color: white;                   /* Garante que os links principais do topo sejam brancos */
-    text-decoration: none;          /* Remove o sublinhado dos links do topo */
-    font-weight: bold;              /* Aplica o efeito de negrito nas letras do menu */
-    font-size: 20px;                /* Ajusta o tamanho da fonte para um tamanho de leitura confortável no topo */
+    color: white;                   
+    text-decoration: none;          
+    font-weight: bold;              
+    font-size: 20px;                
 }
 
 #lista-menu-principal a:hover {
-    text-decoration: underline;     /* Adiciona o sublinhado nos botões do topo somente quando o mouse estiver sobre eles */
+    text-decoration: underline;     
 }
 
 #lista-menu-principal img {
-    height: 50px;                   /* Define o limite máximo da altura da logo no topo para 50px, harmonizando com o menu mais fino */
-    width: auto;                    /* Garante a proporção matemática perfeita da largura da imagem */
-    display: block;                 /* Define a imagem como bloco para evitar espaçamentos fantasmas que o navegador insere embaixo de elementos inline */
+    height: 50px;                   
+    width: auto;                    
+    display: block;                 
+}
+
+/* --- Seções Específicas da Home --- */
+#carrossel-ofertas {
+    padding: 0; 
+    position: relative; 
+    width: 100%;
+    height: 500px;
+    max-height: 450px;
+    overflow: hidden;
+    
+    /* MISTURA DO DEGRADÊ COM AS BOLINHAS */
+    background-color: #4da92b;
+    background-image: 
+        linear-gradient(to bottom, #4da92b 0%, #cccccc 100%), 
+        radial-gradient(rgba(255, 255, 255, 0.25) 2px, transparent 2px); 
+    background-size: 100% 100%, 24px 24px; 
+    background-blend-mode: overlay; 
+}
+
+#secao-horario {
+    text-align: center;             
+    background-color: #f9f9f9;      
+}
+
+/* --- Setores (Esquerda, Centro, Direita) --- */
+#secao-setores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas iguais */
+    gap: 30px;                      
+    max-width: 1200px;              
+    margin: 0 auto;                 
+}
+
+#secao-setores h2 {
+    grid-column: 1 / -1;            
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Proteção para Celulares: Se a tela for pequena, coloca um cartão por linha */
+@media (max-width: 800px) {
+    #secao-setores {
+        grid-template-columns: 1fr; 
+    }
+}
+
+#secao-conveniencias {
+    background-color: #f4fdf0;      
+    display: flex;
+    justify-content: space-around;  
+    flex-wrap: wrap;                
+    gap: 30px;
+    text-align: center;
 }

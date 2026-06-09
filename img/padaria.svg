@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="#f4fdf0"/>
+    
+    <path d="M100 170 C100 100, 300 100, 300 170 C300 200, 100 200, 100 170 Z" fill="#4da92b"/>
+    <path d="M140 135 Q170 110 200 145" stroke="#f4fdf0" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M210 135 Q240 110 270 145" stroke="#f4fdf0" stroke-width="6" stroke-linecap="round" fill="none"/>
+    
+    <text x="200" y="240" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#377d1e" text-anchor="middle" letter-spacing="2">PADARIA</text>
+</svg>

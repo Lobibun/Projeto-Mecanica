@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="#f4fdf0"/>
+    
+    <circle cx="200" cy="150" r="55" fill="#4da92b"/>
+    <path d="M200 95 Q240 60 245 105 Q210 115 200 95" fill="#377d1e"/>
+    
+    <text x="200" y="240" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#377d1e" text-anchor="middle" letter-spacing="2">HORTIFRÚTI</text>
+</svg>
