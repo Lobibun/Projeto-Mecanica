@@ -2,60 +2,62 @@
    NÍVEL 1: SELETORES GLOBAIS E ESTRUTURA BASE (Mais Genéricos)
    Se aplicam à página inteira e servem como a fundação do layout.
    ========================================================================== */
+
 body {
-    margin: 0;   
-    padding: 0;  
-    display: flex;  
-    flex-direction: column;  
-    min-height: 100vh;  
-    font-family: Arial, sans-serif; 
-    background-color: #fbfdfa;
+    margin: 0;                    /* Remove a folga/espaço padrão que o navegador cria nas bordas da tela */
+    padding: 0;                   /* Remove o preenchimento interno padrão do corpo da página */
+    display: flex;                /* Ativa o modo Flexbox: transforma o body em uma caixa inteligente para alinhar os filhos */
+    flex-direction: column;       /* Empilha os elementos filhos (header, main, footer) em formato de coluna (um abaixo do outro) */
+    min-height: 100vh;            /* Força a página a ter no mínimo a altura total da tela do dispositivo */
+    font-family: Arial, sans-serif; /* Define a letra do site como Arial. Se não tiver, usa qualquer outra sem serifa */
+    background-color: #fbfdfa;    /* Define a cor de fundo de todo o site (um tom de branco bem suave, quase esverdeado) */
 }
 
 main {
-    flex: 1;  
+    flex: 1;                      /* Truque de ouro: faz o conteúdo principal esticar e empurrar o rodapé sempre para o final da tela */
 }
 
 /* ==========================================================================
    NÍVEL 2: SELETORES DE TAGS PURAS (Especificidade Baixa)
    ========================================================================== */
+
 header {
-    position: sticky;               
-    top: 0;                         
-    z-index: 1000;                  
+    position: sticky;             /* Faz o menu superior ficar "colado" no topo da tela enquanto o usuário rola a página */
+    top: 0;                       /* Diz que a posição onde ele vai grudar é exatamente no topo (zero pixels do limite superior) */
+    z-index: 1000;                /* Camada de prioridade: garante que o menu passe por cima de qualquer outro elemento ou imagem */
 }
 
 nav {
-    background-color: #4da92b;      
-    padding: 12px 50px;             
+    background-color: #4da92b;    /* Define a cor de fundo do menu de navegação (um verde mais vivo) */
+    padding: 12px 50px;           /* Cria um espaçamento interno: 12px em cima/baixo e 50px nas laterais esquerda/direita */
 }
 
 section {
-    padding: 60px 20px;
+    padding: 60px 20px;           /* Dá um respiro generoso entre as seções: 60px de espaço acima/abaixo e 20px nas laterais */
 }
 
 section h2 {
-    color: #377d1e;
-    font-size: 32px;
-    margin-top: 0;
-    text-align: center;
+    color: #377d1e;               /* Define a cor dos títulos principais das seções (um verde mais escuro) */
+    font-size: 32px;              /* Define o tamanho da letra do título grande */
+    margin-top: 0;                /* Zera o espaço padrão que o navegador coloca acima de títulos */
+    text-align: center;           /* Deixa o texto do título perfeitamente centralizado na tela */
 }
 
 footer {
-    background-color: #377d1e;      
-    color: white;                   
-    display: flex;                  
-    flex-wrap: wrap;                
-    justify-content: space-around;  
-    align-items: flex-start;        
-    padding-top: 40px;              
+    background-color: #377d1e;    /* Define a cor de fundo do rodapé (o mesmo verde escuro institucional) */
+    color: white;                 /* Pinta todos os textos simples dentro do rodapé de branco */
+    display: flex;                /* Ativa o Flexbox para organizar os blocos de conteúdo dentro do rodapé */
+    flex-wrap: wrap;              /* Permite que os blocos quebrem para a linha de baixo caso não caibam todos lado a lado */
+    justify-content: space-around; /* Distribui os blocos criando espaços iguais e harmoniosos entre eles */
+    align-items: flex-start;      /* Alinha os blocos pelo topo deles (caso um seja mais comprido que o outro) */
+    padding-top: 40px;            /* Adiciona um espaço de 40px apenas no topo interno do rodapé */
 }
 
 footer h3 {
-    margin-top: 0;                  
-    border-bottom: 2px solid white; 
-    padding-bottom: 5px;            
-    display: inline-block;          
+    margin-top: 0;                /* Zera o espaço superior padrão do título do rodapé */
+    border-bottom: 2px solid white; /* Cria aquela linha branca estilizada embaixo dos títulos do rodapé */
+    padding-bottom: 5px;          /* Dá um espaço de 5px entre o texto do título e a linha branca abaixo dele */
+    display: inline-block;        /* Faz com que a linha decorativa ocupe apenas o tamanho exato do texto, e não a largura toda */
 }
 
 /* ==========================================================================
@@ -63,618 +65,635 @@ footer h3 {
    ========================================================================== */
 
 /* --- Classes do Rodapé --- */
+
 .coluna-menu, 
 .coluna-contato {
-    margin-bottom: 30px;            
+    margin-bottom: 30px;          /* Garante uma folga de 30px abaixo dessas colunas para não grudarem quando o site encolher */
 }
 
 .coluna-menu ul {
-    list-style: none;               
-    padding: 0;                     
-    margin: 0;                      
+    list-style: none;             /* Remove aquelas bolinhas clássicas que ficam antes dos itens de uma lista */
+    padding: 0;                   /* Zera o recuo lateral esquerdo padrão que as listas possuem */
+    margin: 0;                    /* Zera as margens padrões da lista */
 }
 
 .coluna-menu li {
-    margin-bottom: 10px;            
+    margin-bottom: 10px;          /* Dá um espaço de 10px entre um link do menu e outro (linha por linha) */
 }
 
 .coluna-menu a {
-    color: white;                   
-    text-decoration: none;          
+    color: white;                 /* Deixa as letras dos links do rodapé na cor branca */
+    text-decoration: none;        /* Remove aquele sublinhado padrão que todo link de internet tem */
 }
 
 .coluna-menu a:hover {
-    text-decoration: underline;     
+    text-decoration: underline;   /* Faz o sublinhado aparecer apenas quando o usuário passa o mouse por cima do link */
 }
 
 .coluna-contato {
-    font-style: normal;             
+    font-style: normal;           /* Remove o efeito itálico (letras deitadas) que a tag <address> coloca por padrão */
 }
 
 .coluna-contato h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-top: 15px;             /* Dá um espaçamento de 15px acima do título "Fale Conosco" */
+    margin-bottom: 10px;          /* Dá um espaçamento de 10px abaixo do título "Fale Conosco" */
+    font-size: 18px;              /* Define o tamanho da letra desse título específico */
 }
 
 .coluna-contato p {
-    margin: 5px 0;
-    font-size: 14px;
-    opacity: 0.9;
+    margin: 5px 0;                /* Dá uma margem pequena de 5px acima/abaixo de cada parágrafo de texto */
+    font-size: 14px;              /* Deixa o tamanho da letra do contato um pouco menor e mais discreta */
+    opacity: 0.9;                 /* Deixa o texto sutilmente transparente (90% de visibilidade) para dar um acabamento moderno */
 }
 
 /* ATUALIZADO: Ícone/Logo do mercado maior no rodapé */
 .coluna-contato img {
-    width: 190px;                   
-    height: auto;                   
-    display: block;                 
-    margin-bottom: 20px;            
+    width: 190px;                 /* Define a largura exata da imagem do logo no rodapé */
+    height: auto;                 /* Ajusta a altura automaticamente proporcional à largura, evitando que a foto fique amassada */
+    display: block;               /* Transforma a imagem em bloco para que ela respeite as margens corretamente */
+    margin-bottom: 20px;          /* Adiciona um espaço de 20px abaixo do logo, antes de começar o texto */
 }
 
 .footer-direitos {
-    width: 100%;                    
-    text-align: center;             
-    background-color: #2c6418;      
-    padding: 15px 0;                
-    margin: 0;                      
-    font-size: 14px;                
+    width: 100%;                  /* Força a faixa de direitos autorais a ocupar toda a largura da tela (de ponta a ponta) */
+    text-align: center;           /* Centraliza o texto "Todos os direitos reservados" */
+    background-color: #2c6418;    /* Pinta o fundo da faixa com um verde ainda mais escuro para destacar do resto do rodapé */
+    padding: 15px 0;              /* Dá um espaçamento interno de 15px em cima e embaixo da faixa */
+    margin: 0;                    /* Remove qualquer margem externa indesejada */
+    font-size: 14px;              /* Define o tamanho da letra do texto de direitos autorais */
 }
 
 /* --- Classes Compartilhadas: Cartões Premium (Horário e Conveniências) --- */
+
 .bloco-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-    padding: 40px 30px;
-    max-width: 400px;
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-    border-top: 5px solid #377d1e; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    background-color: white;      /* Deixa o fundo do cartão totalmente branco */
+    border-radius: 15px;          /* Arredonda os quatro cantos do cartão em 15px (deixando um aspecto suave) */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Cria uma sombra preta bem leve e esfumada abaixo do cartão */
+    padding: 40px 30px;           /* Espaçamento interno: 40px em cima/baixo e 30px nas laterais */
+    max-width: 400px;             /* Define a largura máxima que o cartão pode atingir para não esticar demais */
+    flex: 1;                      /* Permite que o cartão cresça igualmente se estiver dividindo espaço com outro */
+    min-width: 280px;             /* Garante que ele nunca fique menor que 280px para não espremer o texto interior */
+    text-align: center;           /* Centraliza todos os textos e elementos de dentro do cartão */
+    border-top: 5px solid #377d1e; /* Adiciona aquela borda verde grossa bem charmosa no topo do cartão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Faz com que a animação ao passar o mouse dure 0.3 segundos e seja suave */
+    display: flex;                /* Ativa o Flexbox dentro do cartão */
+    flex-direction: column;       /* Organiza os itens de dentro do cartão em coluna (um embaixo do outro) */
 }
 
 .bloco-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);  /* Efeito flutuar: move o cartão 5 pixels para cima quando passamos o mouse */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* Deixa a sombra debaixo dele mais escura e espalhada, aumentando o efeito de altura */
 }
 
 .bloco-card h2 {
-    font-size: 24px;
-    color: #377d1e;
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;
+    font-size: 24px;              /* Tamanho da letra do título interno do cartão */
+    color: #377d1e;               /* Cor do título interno (verde escuro) */
+    margin-top: 0;                /* Remove folgas superiores padrão do h2 */
+    margin-bottom: 15px;          /* Dá um espaço de 15px abaixo do título antes do texto começar */
+    text-align: center;           /* Garante a centralização do título */
 }
 
 .bloco-card p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 16px;
+    color: #555;                  /* Cor do texto descritivo (um cinza escuro, mais legível que o preto puro) */
+    line-height: 1.6;             /* Ajusta o espaçamento entre as linhas do parágrafo para facilitar a leitura */
+    margin-bottom: 20px;          /* Espaço de 20px abaixo do texto antes do próximo elemento */
+    font-size: 16px;              /* Tamanho da letra padrão do texto interno */
 }
 
 .bloco-card p time {
-    font-weight: bold;
-    color: #377d1e;
+    font-weight: bold;            /* Deixa os horários destacados em negrito */
+    color: #377d1e;               /* Aplica a cor verde escura diretamente nos números das horas */
 }
 
 .card-unico {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 500px;             /* No cartão de horários (que está sozinho), permite uma largura um pouco maior de 500px */
+    margin: 0 auto;               /* Centraliza o cartão na tela caso ela seja muito larga (aplica margens automáticas nas laterais) */
 }
 
 .icone-destaque {
-    width: 70px;
-    height: 70px;
-    background-color: #eaf6e6; 
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px auto;
+    width: 70px;                  /* Largura da rodinha de fundo do ícone */
+    height: 70px;                 /* Altura da rodinha de fundo do ícone */
+    background-color: #eaf6e6;    /* Cor de fundo do círculo (um verde clarinho bem suave) */
+    border-radius: 50%;           /* Aplica 50% de arredondamento para transformar o quadrado em um círculo perfeito */
+    display: flex;                /* Ativa o Flexbox na rodinha */
+    align-items: center;          /* Centraliza o ícone SVG desenhado verticalmente dentro do círculo */
+    justify-content: center;      /* Centraliza o ícone SVG desenhado horizontalmente dentro do círculo */
+    margin: 0 auto 20px auto;     /* Centraliza o círculo no meio do cartão e joga 20px de espaço para baixo */
 }
 
 .icone-destaque svg {
-    width: 35px;
-    height: 35px;
+    width: 35px;                  /* Define a largura do desenho do ícone (relógio ou cartão) */
+    height: 35px;                 /* Define a altura do desenho do ícone */
 }
 
 /* --- Tags de Pagamento --- */
+
 .tags-pagamento {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: auto;
+    display: flex;                /* Organiza as caixinhas de pagamento (Pix, Dinheiro, etc) com Flexbox */
+    flex-wrap: wrap;              /* Se faltar espaço horizontal, joga as caixinhas restantes para a linha de baixo */
+    justify-content: center;      /* Centraliza as caixinhas no meio do cartão */
+    gap: 10px;                    /* Adiciona um espaçamento de 10px entre uma caixinha e outra */
+    margin-top: auto;             /* Empurra todo o bloco de tags para a parte mais baixa do cartão, alinhando com o fundo */
 }
 
 .tags-pagamento small {
-    background-color: #f3f3f3;
-    color: #444;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    border: 1px solid #e0e0e0;
+    background-color: #f3f3f3;    /* Fundo cinza bem clarinho para cada caixinha de pagamento */
+    color: #444;                  /* Cor do texto (cinza escuro) */
+    padding: 8px 14px;            /* Espaço interno: 8px em cima/baixo e 14px nas laterais das caixinhas */
+    border-radius: 20px;          /* Arredonda as bordinhas das caixinhas deixando-as em formato de pílula */
+    font-size: 13px;              /* Deixa o texto com tamanho menor */
+    font-weight: bold;            /* Aplica o efeito negrito nas palavras */
+    border: 1px solid #e0e0e0;    /* Cria uma bordinha fina cinza ao redor de cada caixinha */
 }
 
 /* --- Botão WhatsApp Estilizado --- */
+
 .botao-whatsapp {
-    background-color: #25D366;    
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 30px; 
-    display: inline-flex; 
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: auto;
-    transition: background-color 0.3s, transform 0.2s; 
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    background-color: #25D366;    /* Cor oficial do WhatsApp (verde clássico) */
+    color: white;                 /* Texto e ícone do botão na cor branca */
+    padding: 14px 25px;           /* Espaçamento interno: 14px em cima/baixo e 25px nas laterais para dar corpo ao botão */
+    text-decoration: none;        /* Remove a linha sublinhada padrão do link */
+    font-weight: bold;            /* Deixa a palavra "Chamar no WhatsApp" em negrito */
+    font-size: 16px;              /* Define o tamanho da letra */
+    border-radius: 30px;          /* Deixa o botão com as laterais totalmente arredondadas */
+    display: inline-flex;         /* Faz o botão se comportar como texto, mas usando Flexbox internamente */
+    align-items: center;          /* Centraliza o ícone do Whats verticalmente com o texto do lado dele */
+    justify-content: center;      /* Centraliza todo o conjunto no meio do botão */
+    gap: 10px;                    /* Distância de 10px entre o desenho do logo do Whats e o texto escrito */
+    margin-top: auto;             /* Empurra o botão de forma inteligente para ficar sempre colado na base do cartão */
+    transition: background-color 0.3s, transform 0.2s; /* Define transições suaves de 0.3s para cor e 0.2s para tamanho */
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25); /* Cria um brilho/sombra verde bem sutil abaixo do botão */
 }
 
 .botao-whatsapp:hover {
-    background-color: #1DA851;
-    transform: scale(1.02);
+    background-color: #1DA851;    /* Escurece levemente o verde do botão quando o cliente passa o mouse */
+    transform: scale(1.02);       /* Aumenta o tamanho do botão discretamente em 2% (efeito de clique/proximidade) */
 }
 
 /* --- Classes dos Setores --- */
+
 .card-setor {
-    background-color: white;      
-    border-radius: 12px;          
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05); 
-    padding: 30px 20px;
-    text-align: center;
-    border: 1px solid #eef5ec;
+    background-color: white;      /* Cor de fundo de cada setor (Padaria, Hortifrúti, etc) */
+    border-radius: 12px;          /* Arredondamento suave nos cantos das caixas dos setores */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05); /* Sombra bem levinha e cinza nas bordas */
+    padding: 30px 20px;           /* Espaçamento interno: 30px superior/inferior e 20px nas laterais */
+    text-align: center;           /* Centraliza tudo que estiver ali dentro */
+    border: 1px solid #eef5ec;    /* Cria uma linha fina nas bordas em tom verde clarinho quase imperceptível */
 }
 
 .card-setor img {
-    width: 100%;
-    height: 140px; 
-    object-fit: contain; 
-    display: block; 
-    margin: 0 auto 15px auto; 
+    width: 100%;                  /* O desenho/ícone ocupa a largura máxima disponível da coluna */
+    height: 140px;                /* Trava a altura das imagens em 140px para que todas fiquem alinhadas por igual */
+    object-fit: contain;          /* Faz a imagem se adaptar ao tamanho sem esticar ou cortar partes dela */
+    display: block;               /* Força a imagem a se comportar como bloco */
+    margin: 0 auto 15px auto;     /* Centraliza o ícone e adiciona 15px de distância para o texto abaixo dele */
 }
 
 .card-setor h3 {
-    color: #377d1e;
-    font-size: 22px;
-    margin: 15px 0 10px 0;
+    color: #377d1e;               /* Cor do título do setor (Verde escuro) */
+    font-size: 22px;              /* Tamanho da fonte do título */
+    margin: 15px 0 10px 0;        /* Margens externas: 15px em cima, zero nas laterais e 10px abaixo dele */
 }
 
 .card-setor p {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.5;
-    margin: 0;
+    color: #666;                  /* Cor do texto descritivo do setor (Cinza médio) */
+    font-size: 15px;              /* Tamanho da letra */
+    line-height: 1.5;             /* Espaçamento entre as linhas do parágrafo */
+    margin: 0;                    /* Zera qualquer margem extra que o parágrafo traga por padrão */
 }
 
-/* --- CORRIGIDO E MEHORADO: Classes da Página "Sobre Nós" --- */
+/* --- CORRIGIDO E MELHORADO: Classes da Página "Sobre Nós" --- */
+
 .sobre-nos-geral {
-    display: flex;               
-    align-items: center;         
-    justify-content: center;
-    gap: 70px;               
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;        
+    display: flex;                /* Alinha a imagem da fachada lado a lado com os textos da história */
+    align-items: center;          /* Centraliza verticalmente a foto com o bloco de texto ao lado */
+    justify-content: center;      /* Centraliza todo o conjunto no meio da página */
+    gap: 70px;                    /* Cria uma distância elegante de 70px entre a imagem e o texto */
+    max-width: 1200px;            /* Limita o conteúdo a abrir no máximo até 1200px (ótimo para telas de computador grandes) */
+    margin: 0 auto;               /* Centraliza toda a seção na tela */
+    padding: 60px 20px;           /* Espaçamentos externos de segurança */
 }
 
 .sobre-nos-geral img {
-    display: block;             
-    width: 100%;
-    max-width: 480px;
-    height: 440px;             
-    object-fit: cover;
-    border-radius: 15px;         
+    display: block;               /* Define a imagem como bloco */
+    width: 100%;                  /* Faz ela ocupar o espaço máximo de sua coluna */
+    max-width: 480px;             /* Impede que a foto cresça além de 480px de largura */
+    height: 440px;                /* Fixa a altura da imagem da fachada em 440px */
+    object-fit: cover;            /* Preenche todo o espaço cortando rebarbas sem distorcer ou amassar os detalhes da foto */
+    border-radius: 15px;          /* Arredonda os cantos da imagem da fachada */
     /* Efeito de acabamento tridimensional com sombra verde sutil atrás da foto */
-    box-shadow: -15px 15px 0px #eaf6e6, 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    box-shadow: -15px 15px 0px #eaf6e6, 0 10px 30px rgba(0, 0, 0, 0.08); 
+    /* A linha acima cria primeiro o bloco verde sólido deslocado à esquerda (-15px e 15px) e depois uma sombra cinza tradicional */
+    transition: transform 0.3s ease; /* Transição suave de 0.3s ao passar o mouse */
 }
 
 .sobre-nos-geral img:hover {
-    transform: scale(1.01) translateY(-3px);
+    transform: scale(1.01) translateY(-3px); /* Faz a foto crescer 1% e subir 3px na tela quando passamos o mouse */
 }
 
 .sobre-nos-geral article {  
-    flex: 1;
-    max-width: 580px;       
+    flex: 1;                      /* Faz a coluna de texto ocupar todo o restante do espaço disponível */
+    max-width: 580px;             /* Garante que as linhas de leitura não passem de 580px de largura (melhor para os olhos) */
 }
 
 .sobre-nos-geral .subtitulo-sobre {
-    color: #4da92b;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 8px;
+    color: #4da92b;               /* Cor do textinho "Nossa História" (verde vivo) */
+    font-weight: bold;            /* Coloca em negrito */
+    text-transform: uppercase;    /* Força todas as letras a ficarem em MAIÚSCULO automaticamente */
+    font-size: 13px;              /* Letra menor e delicada */
+    letter-spacing: 2px;          /* Dá um espaço extra de 2px entre uma letra e outra (efeito estético moderno) */
+    display: block;               /* Transforma em bloco para ficar sozinho na linha */
+    margin-bottom: 8px;           /* Distância de 8px para o título principal abaixo dele */
 }
 
 .sobre-nos-geral h1 {
-    color: #377d1e;
-    font-size: 38px;
-    margin-top: 0;
-    margin-bottom: 25px;
-    position: relative;
-    display: inline-block;
+    color: #377d1e;               /* Cor do título principal "Sobre Nós" (Verde escuro) */
+    font-size: 38px;              /* Fonte bem grande e imponente */
+    margin-top: 0;                /* Remove margem superior */
+    margin-bottom: 25px;          /* Distância de 25px até começar o primeiro parágrafo */
+    position: relative;           /* Ativa o modo de posicionamento relativo para o traço decorativo funcionar abaixo */
+    display: inline-block;        /* Faz o elemento se ajustar exatamente ao tamanho da palavra */
 }
 
 /* Detalhe verde elegante na barra inferior do título principal */
 .sobre-nos-geral h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #4da92b;
-    margin-top: 8px;
-    border-radius: 2px;
+    content: '';                  /* Cria um elemento falso em branco logo após o h1 */
+    display: block;               /* Transforma esse elemento em um bloco visível */
+    width: 60px;                  /* Largura do traço verde decorativo */
+    height: 4px;                  /* Espessura/altura do traço verde */
+    background-color: #4da92b;    /* Cor do traço decorativo */
+    margin-top: 8px;              /* Afasta o traço 8px para baixo do texto */
+    border-radius: 2px;           /* Arredonda as pontas do traço decorativo */
 }
 
 .sobre-nos-geral p {
-    font-size: 16px;      
-    line-height: 1.8;    
-    text-align: justify;  
-    color: #555;    
-    margin-top: 0;
-    margin-bottom: 20px;
+    font-size: 16px;              /* Letra com tamanho confortável para leitura longa */
+    line-height: 1.8;             /* Espaçamento vertical entre linhas bem aberto (evita cansaço visual) */
+    text-align: justify;          /* Distribui o texto preenchendo as linhas de ponta a ponta (deixando reto nas laterais) */
+    color: #555;                  /* Cor do texto descritivo (Cinza escuro) */
+    margin-top: 0;                /* Remove margem superior padrão do parágrafo */
+    margin-bottom: 20px;          /* Separa um parágrafo do outro com 20px de folga */
 }
 
 .sobre-nos-geral p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;             /* Remove a margem do último parágrafo da história para não quebrar o layout */
 }
 
 /* --- Classes da Página "Contato" (Lado a Lado Separadas por Igual) --- */
+
 .container-contato {
-    display: flex;
-    flex-direction: column; 
-    gap: 40px; 
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;                /* Ativa o Flexbox no organizador geral da página de contato */
+    flex-direction: column;       /* Alinha as seções em colunas verticalmente */
+    gap: 40px;                    /* Distância de 40px entre a parte das informações e o mapa lá embaixo */
+    padding: 50px 20px;           /* Espaçamentos laterais e verticais de segurança */
+    max-width: 1200px;            /* Largura máxima centralizada da página */
+    margin: 0 auto;               /* Centraliza a página de contato na tela */
 }
 
 section.contato-topo {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
-    align-items: stretch; 
-    gap: 40px; 
-    padding: 20px 0; 
+    display: flex;                /* Alinha o quadro verde de contatos e a imagem da fachada lado a lado */
+    flex-direction: row;          /* Força o alinhamento horizontal (um do lado do outro) */
+    justify-content: space-between; /* Empurra um elemento para cada extremidade lateral */
+    align-items: stretch;         /* Truque de mestre: força as duas caixas a terem exatamente a mesma altura! */
+    gap: 40px;                    /* Distância de 40px no meio entre o quadro verde e a imagem */
+    padding: 20px 0;              /* Pequeno espaçamento vertical externo */
 }
 
 section.ctt-paginacontato  {
-    flex: 1; 
-    background-color: #2c6418;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    color: white;
-    padding: 40px 35px; 
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex: 1;                      /* Divide o espaço disponível meio a meio com a foto (ganha 50% da largura) */
+    background-color: #2c6418;    /* Cor de fundo do quadro de contatos (Verde bem escuro corporativo) */
+    border-radius: 20px;          /* Arredonda generosamente os 4 cantos da caixa verde em 20px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra suave preta ao redor do quadro verde */
+    color: white;                 /* Pinta as letras normais de dentro do quadro de branco */
+    padding: 40px 35px;           /* Espaço interno amplo: 40px em cima/baixo e 35px nas laterais */
+    box-sizing: border-box;       /* Garante que os paddings não alterem o tamanho final da largura da caixa */
+    display: flex;                /* Ativa o Flexbox interno */
+    flex-direction: column;       /* Organiza as informações em lista vertical */
+    justify-content: center;      /* Centraliza verticalmente todo o conteúdo caso a caixa estique muito */
 }
 
 section.foto-paginacontato {
-    flex: 1; 
-    display: flex;
-    padding: 0; 
+    flex: 1;                      /* Também ganha 50% de largura, dividindo a tela perfeitamente com a caixa verde */
+    display: flex;                /* Ativa o flex para que a imagem se ajuste bem dentro */
+    padding: 0;                   /* Zera margens internas */
 }
 
 section.foto-paginacontato img {
-    width: 100%;            
-    height: 100%; 
-    min-height: 450px; 
-    object-fit: cover; 
-    border-radius: 20px;           
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); 
-    display: block;
+    width: 100%;                  /* Ocupa toda a largura da sua coluna (50% da tela) */
+    height: 100%;                 /* Ocupa toda a altura disponível do bloco irmão (estica junto com a caixa verde) */
+    min-height: 450px;            /* Define uma altura mínima de 450px para garantir imponência na página */
+    object-fit: cover;            /* Corta as rebarbas da foto para mantê-la linda e sem distorções no espaço esticado */
+    border-radius: 20px;          /* Arredonda os cantos da imagem com os mesmos 20px da caixa verde ao lado */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra elegante combinando com o bloco vizinho */
+    display: block;               /* Evita espaços vazios fantasmas abaixo da imagem */
 }
 
 .contato-mapa {
-    width: 100%;
+    width: 100%;                  /* O bloco do mapa do Google ocupa toda a largura da página */
 }
 
 .contato-mapa iframe {
-    width: 100%;
-    height: 450px; 
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    display: block;
+    width: 100%;                  /* O mapa interativo em si se expande a 100% da largura */
+    height: 450px;                /* Fixa a altura do mapa em 450px (excelente tamanho visual) */
+    border-radius: 20px;          /* Cantos do mapa arredondados para acompanhar a identidade visual do site */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Sombra abaixo do mapa */
+    display: block;               /* Garante comportamento correto em bloco */
 }
 
 .ctt-paginacontato h1 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 15px;
+    text-align: center;           /* Centraliza o título "Fale conosco" dentro do quadro verde */
+    margin-top: 0;                /* Remove margem superior padrão */
+    margin-bottom: 25px;          /* Espaço de 25px abaixo do título antes de iniciar a lista */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Cria uma linha divisória branca semitransparente muito elegante */
+    padding-bottom: 15px;         /* Espaço de 15px entre as letras do título e a linha divisória */
 }
 
 .Listactt-paginacontato {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;             /* Desativa as bolinhas da lista de informações de contato */
+    padding: 0;                   /* Zera recuos internos */
+    margin: 0;                    /* Zera margens */
 }
 
 .Listactt-paginacontato li {
-    display: flex;       
-    align-items: center; 
-    margin-bottom: 20px; 
+    display: flex;                /* Alinha o ícone (ex: telefone) e o texto na mesma linha horizontal */
+    align-items: center;          /* Centraliza o ícone verticalmente com a linha de texto */
+    margin-bottom: 20px;          /* Afasta um item do outro (ex: afasta telefone do email) em 20px */
 }
 
 .Listactt-paginacontato li:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;             /* Retira a margem do último item da lista (Horário) para não sobrar espaço */
 }
 
 .Listactt-paginacontato li i  {
-    color: #4caf50;      
-    font-size: 22px;     
-    margin-right: 15px;  
-    width: 30px;         
-    text-align: center;  
+    color: #4caf50;               /* Define a cor dos ícones de contato (um tom de verde claro/limão bem visível no escuro) */
+    font-size: 22px;              /* Aumenta o tamanho dos ícones para 22px */
+    margin-right: 15px;           /* Empurra o texto 15px para a direita, evitando que ele fique colado no ícone */
+    width: 30px;                  /* Fixa uma largura de 30px para os ícones, garantindo que os textos fiquem perfeitamente alinhados na mesma coluna vertical */
+    text-align: center;           /* Centraliza o ícone dentro desses 30px */
 }
 
 .Listactt-paginacontato li p {
-    margin: 0;           
-    font-size: 16px;
-    line-height: 1.5;
+    margin: 0;                    /* Zera as margens padrões das linhas de texto */
+    font-size: 16px;              /* Define o tamanho da fonte do texto explicativo */
+    line-height: 1.5;             /* Altura de linha ajustada */
 }
 
 .link-contato {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;      
-    width: 100%;
+    display: flex;                /* Faz os links clicáveis (Endereço e Instagram) se comportarem como Flexbox */
+    align-items: center;          /* Alinha ícone e texto perfeitamente na horizontal */
+    text-decoration: none;        /* Remove o sublinhado azul padrão da internet */
+    color: #ffffff;               /* Força as letras do link a continuarem brancas */
+    width: 100%;                  /* Garante que toda a área da linha seja clicável */
 }
 
 .link-contato:hover p {
-    text-decoration: underline; 
-    color: #4caf50;
+    text-decoration: underline;   /* Adiciona o sublinhado quando o cliente passa o mouse no link */
+    color: #4caf50;               /* Muda a cor do texto do link para o verde claro ao passar o mouse (efeito visual de feedback) */
 }
 
 /* --- Classes do Carrossel --- */
+
 .banner-slide {
-    width: 100%;                  
-    height: 100%;            
-    object-fit: contain; 
-    background-color: transparent; 
-    display: none; 
-    animation: fade 0.8s ease-in-out;
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.12));
+    width: 100%;                  /* Faz a imagem do panfleto ocupar toda a largura do carrossel */
+    height: 100%;                 /* Faz ela ocupar toda a altura disponível do carrossel */
+    object-fit: contain;          /* Faz o panfleto/oferta aparecer inteiro na tela sem cortes ou distorções */
+    background-color: transparent; /* Mantém o fundo transparente caso a imagem tenha transparências */
+    display: none;                /* Esconde todos os slides por padrão */
+    animation: fade 0.8s ease-in-out; /* Executa um efeito de surgimento suave (fade) que dura 0.8 segundos */
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.12)); /* Coloca uma sombra sutil apenas no contorno do panfleto */
 }
 
 .banner-slide.ativo {
-    display: block;
+    display: block;               /* Exibe apenas o slide que tiver a classe ".ativo" injetada via JavaScript */
 }
 
 @keyframes fade {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+    from { opacity: 0.5; }        /* A animação começa com a imagem em 50% de transparência */
+    to { opacity: 1; }            /* E termina em 100% visível, criando o efeito de transição suave */
 }
 
 .btn-carrossel {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    user-select: none;
-    z-index: 10;
+    position: absolute;           /* Destaca os botões de seta da estrutura normal para flutuarem sobre as fotos */
+    top: 50%;                     /* Move os botões até a metade da altura do carrossel */
+    transform: translateY(-50%);  /* Ajusta o eixo de forma perfeita para centralizar as setas verticalmente */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo dos botões preto translúcido (com 40% de visibilidade para não tapar as ofertas) */
+    color: white;                 /* Cor das setas de avançar/voltar em branco */
+    border: none;                 /* Remove as bordas feias padrões do botão */
+    font-size: 30px;              /* Deixa as setas bem grandes (30px) */
+    padding: 15px 20px;           /* Dá tamanho à área de clique do botão */
+    cursor: pointer;              /* Transforma a seta do mouse naquela "mãozinha" de clique */
+    transition: 0.3s;             /* Suaviza as mudanças de cores em 0.3 segundos */
+    user-select: none;            /* Impede que o usuário selecione o texto da seta acidentalmente ao clicar rápido */
+    z-index: 10;                  /* Coloca os botões em uma camada acima das imagens das ofertas */
 }
 
-.btn-carrossel.prev { left: 0; border-radius: 0 5px 5px 0; }
-.btn-carrossel.next { right: 0; border-radius: 5px 0 0 5px; }
-.btn-carrossel:hover { background-color: rgba(77, 169, 43, 0.9); }
+.btn-carrossel.prev { left: 0; border-radius: 0 5px 5px 0; }  /* Posiciona a seta esquerda bem no canto esquerdo e arredonda só o lado direito */
+.btn-carrossel.next { right: 0; border-radius: 5px 0 0 5px; } /* Posiciona a seta direita bem no canto direito e arredonda só o lado esquerdo */
+.btn-carrossel:hover { background-color: rgba(77, 169, 43, 0.9); } /* Transforma o fundo do botão em um verde quase sólido ao passar o mouse */
 
 /* ==========================================================================
    NÍVEL 4: SELETORES DE ID E ELEMENTOS ANINHADOS (Mais Específicos)
    ========================================================================== */
 
 /* --- Menu Superior --- */
+
 #lista-menu-principal {
-    display: flex;                  
-    justify-content: flex-start;    
-    align-items: center;            
-    list-style: none;               
-    margin: 0;                      
-    padding: 0;                     
-    gap: 35px;                      
+    display: flex;                /* Organiza os itens do menu superior lado a lado */
+    justify-content: flex-start;  /* Alinha os links do menu começando pelo lado esquerdo */
+    align-items: center;          /* Centraliza verticalmente o logo com as palavras do menu */
+    list-style: none;             /* Retira as bolinhas da lista do menu */
+    margin: 0;                    /* Remove margens extras */
+    padding: 0;                   /* Remove espaçamentos extras */
+    gap: 35px;                    /* Cria uma distância perfeita de 35px entre cada palavra do menu */
 }
 
 #lista-menu-principal a {
-    color: white;                   
-    text-decoration: none;          
-    font-weight: bold;              
-    font-size: 20px;                
+    color: white;                 /* Pinta as palavras do menu principal de branco */
+    text-decoration: none;        /* Remove o sublinhado padrão dos links */
+    font-weight: bold;            /* Deixa as palavras em negrito */
+    font-size: 20px;              /* Define o tamanho das letras do menu */
 }
 
 #lista-menu-principal a:hover {
-    text-decoration: underline;     
+    text-decoration: underline;   /* Adiciona o sublinhado charmoso quando passamos o mouse no menu */
 }
 
 #lista-menu-principal img {
-    height: 50px;                   
-    width: auto;                    
-    display: block;                 
+    height: 50px;                 /* Fixa a altura do logo do topo em 50px para manter o menu discreto e profissional */
+    width: auto;                  /* Ajusta a largura automaticamente para não amassar a imagem do logo */
+    display: block;               /* Elimina folgas na base do bloco da imagem */
 }
 
 /* --- Seções Específicas da Home --- */
+
 #carrossel-ofertas {
-    padding: 0; 
-    position: relative; 
-    width: 100%;
-    height: 500px;
-    max-height: 450px;
-    overflow: hidden;
-    background-color: #4da92b;
+    padding: 0;                   /* Remove qualquer espaçamento que afaste as imagens das bordas */
+    position: relative;           /* Permite que os botões com "position: absolute" fiquem presos dentro dele */
+    width: 100%;                  /* Ocupa a largura inteira da tela */
+    height: 500px;                /* Altura padrão definida para computadores */
+    max-height: 450px;            /* Limita a altura máxima a 450px para não roubar a tela inteira */
+    overflow: hidden;             /* Esconde qualquer imagem que passe dos limites de altura ou largura */
+    background-color: #4da92b;    /* Cor de fundo base do carrossel (Verde vivo) */
+    /* Efeito de Gradiente + Bolinhas estilizadas no fundo atrás do panfleto */
     background-image: 
         linear-gradient(to bottom, #4da92b 0%, #cccccc 100%), 
         radial-gradient(rgba(255, 255, 255, 0.25) 2px, transparent 2px); 
     background-size: 100% 100%, 24px 24px; 
-    background-blend-mode: overlay; 
+    background-blend-mode: overlay; /* Mistura os dois fundos criando um visual premium de mercado moderno */
 }
 
 #secao-horario {
-    background-color: #f3f9f1;
-    display: flex;
-    justify-content: center;
+    background-color: #f3f9f1;    /* Cor de fundo exclusiva da seção de horários (um tom verde sutilíssimo) */
+    display: flex;                /* Ativa o flex para centralizar o cartão interno */
+    justify-content: center;      /* Garante a centralização perfeita na horizontal */
 }
 
 #secao-setores {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;                      
-    max-width: 1200px;              
-    margin: 0 auto;                 
+    display: grid;                /* Ativa o poderoso CSS Grid para criar o layout de colunas fixas */
+    grid-template-columns: repeat(3, 1fr); /* Divide o espaço da tela em exatamente 3 colunas de tamanhos iguais (1fr cada) */
+    gap: 30px;                    /* Cria uma distância/calha fixa de 30px entre uma coluna e outra */
+    max-width: 1200px;            /* Impede o grid de abrir mais que 1200px em telas gigantes */
+    margin: 0 auto;               /* Centraliza o grid todo no meio do monitor */
 }
 
 #secao-setores h2 {
-    grid-column: 1 / -1;            
-    margin-bottom: 30px;
+    grid-column: 1 / -1;          /* Força o título "O que você encontra aqui" a ocupar as 3 colunas sozinho, ficando no topo */
+    margin-bottom: 30px;          /* Espaço abaixo do título principal do setor */
 }
 
 #secao-conveniencias {
-    background-color: #f4fdf0;      
-    display: flex;
-    justify-content: center; 
-    align-items: stretch;
-    flex-wrap: wrap;                
-    gap: 40px;
+    background-color: #f4fdf0;    /* Cor de fundo exclusiva da área de formas de pagamento e WhatsApp */
+    display: flex;                /* Ativa o flex para colocar os dois cartões um ao lado do outro */
+    justify-content: center;      /* Centraliza os cartões horizontalmente */
+    align-items: stretch;         /* Força os dois cartões a terminarem exatamente com a mesma altura, independente do texto */
+    flex-wrap: wrap;              /* Permite que eles quebrem de linha se a tela for muito pequena */
+    gap: 40px;                    /* Distância de 40px de separação entre os cartões */
 }
 
 /* ==========================================================================
    NÍVEL 5: MEDIA QUERIES (Responsividade para Celulares e Tablets)
    ========================================================================== */
+
+/* Quando a tela do dispositivo for menor ou igual a 900px (Tablets e celulares deitados): */
 @media (max-width: 900px) {
+    
     /* Ajustes Gerais */
     section {
-        padding: 40px 15px;
+        padding: 40px 15px;       /* Reduz o espaçamento das seções para sobrar mais espaço útil na tela menor */
     }
 
     section h2 {
-        font-size: 26px;
+        font-size: 26px;          /* Encolhe o tamanho da letra dos títulos principais de 32px para 26px */
     }
 
     /* Menu de Navegação Superior */
     nav {
-        padding: 15px 20px;
+        padding: 15px 20px;       /* Reduz as folgas do menu superior */
     }
 
     #lista-menu-principal {
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
+        flex-wrap: wrap;          /* Permite que os botões do menu quebrem de linha se faltar espaço horizontal */
+        gap: 15px;                /* Reduz o espaço entre as opções do menu para 15px */
+        justify-content: center;  /* Centraliza todos os links do menu no meio da tela do tablet */
     }
 
     #lista-menu-principal a {
-        font-size: 16px;
+        font-size: 16px;          /* Diminui o tamanho da letra do menu de 20px para 16px para caber melhor */
     }
 
     /* Carrossel Reduzido */
     #carrossel-ofertas {
-        height: 300px;
+        height: 300px;            /* Diminui a altura do carrossel para 300px, adaptando a proporção da tela menor */
     }
 
     .btn-carrossel {
-        font-size: 20px;
-        padding: 10px 12px;
+        font-size: 20px;          /* Diminui o tamanho das setas do carrossel */
+        padding: 10px 12px;       /* Encolhe a área de clique dos botões do carrossel */
     }
 
     /* Grid de Setores vira 1 coluna */
     #secao-setores {
-        grid-template-columns: 1fr;
-        max-width: 450px;
+        grid-template-columns: 1fr; /* Muda o visual de 3 colunas para APENAS 1 coluna (fica tudo empilhado um em cima do outro) */
+        max-width: 450px;         /* Limita a caixinha a ter no máximo 450px de largura para não ficar esticadona */
     }
 
     /* ATUALIZADO: Responsividade refinada da Seção Sobre Nós */
     .sobre-nos-geral {
-        flex-direction: column;
-        padding: 40px 20px;
-        gap: 35px;
+        flex-direction: column;   /* Empilha a foto da fachada e a nossa história verticalmente */
+        padding: 40px 20px;       /* Ajusta os espaçamentos */
+        gap: 35px;                /* Reduz o buraco de separação entre a foto e o texto para 35px */
     }
 
     .sobre-nos-geral img {
-        height: 300px;
-        width: 100%;
-        max-width: 450px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Remove a sombra tridimensional no mobile para centralizar perfeitamente */
+        height: 300px;            /* Encolhe a altura da foto da fachada para 300px no tablet/celular */
+        width: 100%;              /* Faz ela ocupar a largura inteira disponível */
+        max-width: 450px;         /* Limita a largura máxima para combinar com o layout empilhado */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Remove a sombra verde tridimensional lateral no mobile para centralizar perfeitamente sem sobrar espaços */
     }
 
     .sobre-nos-geral article {
-        max-width: 100%;
-        text-align: center;
+        max-width: 100%;          /* Permite que o texto use 100% da largura da coluna do celular */
+        text-align: center;       /* Centraliza os títulos da história no tablet */
     }
 
     .sobre-nos-geral h1::after {
-        margin: 8px auto 0 auto; /* Centraliza a linha decorativa do h1 no mobile */
+        margin: 8px auto 0 auto;  /* Centraliza aquela linhazinha verde decorativa abaixo do h1 quando estiver no mobile */
     }
 
     .sobre-nos-geral p {
-        text-align: justify; /* Mantém o alinhamento justificado do texto no tablet */
+        text-align: justify;      /* Mantém o texto bem alinhado e quadrado nas laterais no formato tablet */
     }
 
     /* Comportamento responsivo perfeito para as duas caixas separadas do contato */
     section.contato-topo {
-        flex-direction: column; 
-        gap: 30px;
-        padding: 0;
+        flex-direction: column;   /* Faz o quadro verde de contatos e a foto da frente ficarem um embaixo do outro */
+        gap: 30px;                /* Define uma distância de 30px entre eles */
+        padding: 0;               /* Remove recuos desnecessários */
     }
 
     section.ctt-paginacontato {
-        width: 100%;
-        padding: 30px 20px;
+        width: 100%;              /* Quadro verde passa a usar toda a largura da tela do celular */
+        padding: 30px 20px;       /* Reduz sutilmente o espaço interno do quadro verde */
     }
 
     section.foto-paginacontato {
-        width: 100%;
+        width: 100%;              /* A foto do contato passa a ocupar toda a largura da tela */
     }
 
     section.foto-paginacontato img {
-        height: 350px;
-        min-height: auto;
+        height: 350px;            /* Ajusta a altura da foto para 350px, mantendo o visual equilibrado */
+        min-height: auto;         /* Desativa a restrição de altura que existia no computador */
     }
 
     .contato-mapa iframe {
-        height: 300px;
+        height: 300px;            /* Reduz a altura do mapa para 300px, melhorando a rolagem com o dedo na tela celular */
     }
 }
 
+/* Quando a tela do dispositivo for muito pequena, menor ou igual a 480px (Celulares em pé): */
 @media (max-width: 480px) {
+    
     #carrossel-ofertas {
-        height: 200px;
+        height: 200px;            /* Carrossel bem compacto (200px de altura) para caber os panfletos nos celulares pequenos */
     }
 
     .bloco-card {
-        padding: 30px 20px;
+        padding: 30px 20px;       /* Diminui ainda mais o espaço interno dos cartões para o texto ganhar área útil */
     }
 
     .sobre-nos-geral p {
-        text-align: left; /* No celular bem pequeno o texto corrido à esquerda lê melhor */
+        text-align: left;         /* No celular bem pequeno o texto alinhado à esquerda lê muito melhor do que justificado, evitando buracos brancos nas palavras */
     }
 
     footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 15px 0 15px;
+        flex-direction: column;   /* Transforma o rodapé em uma única coluna gigante vertical */
+        align-items: center;      /* Centraliza todos os blocos de conteúdo no meio do visor do celular */
+        text-align: center;       /* Centraliza todos os textos das colunas do rodapé */
+        padding: 30px 15px 0 15px; /* Ajusta as margens de respiro do rodapé mobile */
     }
 
     .coluna-contato img {
-        margin: 0 auto 20px auto;
-        width: 160px;
+        margin: 0 auto 20px auto; /* Centraliza perfeitamente a imagem do logo do rodapé no meio da tela do celular */
+        width: 160px;             /* Encolhe levemente o logo para 160px de largura para ficar delicado */
     }
 }
