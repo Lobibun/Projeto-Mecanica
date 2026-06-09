@@ -84,7 +84,32 @@ footer h3 {
     font-size: 14px;                /* Reduz o tamanho da fonte para que os direitos autorais fiquem discretos */
 }
 
+.sobre-nos-geral {
+    display: flex;               /* Transforma a seção "Sobre Nós" em um container Flexbox para alinhar a imagem e o texto lado a lado */
+    align-items: flex-start;         /* Alinha verticalmente a imagem e o texto ao centro, garantindo que fiquem harmoniosos mesmo com alturas diferentes */
+    gap: 60px;               /* Cria um espaço de 30px entre a imagem e o texto, evitando que fiquem colados um no outro */
+    padding: 40px 100px;        /* Adiciona um espaçamento interno de 40px acima/abaixo e 100px nas laterais para dar respiro ao conteúdo */
+}
 
+.sobre-nos-geral img {
+    wdisplay: block;               /* Define a imagem como bloco para evitar espaçamentos fantasmas que o navegador insere embaixo de elementos inline */
+    height: 600px;             /* Define a altura da imagem para 600px, garantindo que ela seja grande o suficiente para destacar a fachada do mercado */ 
+    width: auto;                  /* Garante a proporção matemática perfeita da largura da imagem, evitando distorções */
+    border-radius: 10px;         /* Adiciona cantos arredondados de 10px na imagem para um visual mais moderno e suave */
+    margin : 40px 0;             /* Zera a margem padrão do parágrafo, impedindo que surjam frestas brancas indesejadas */
+    margin-left: 100px;         /* Adiciona uma margem esquerda de 100px para afastar a imagem do menu superior e criar um alinhamento visual mais agradável */
+}
+
+.sobre-nos-geral article {  
+    max-width: 500px;       /* Limita a largura máxima do texto para 500px, evitando que ele se estenda demais e fique difícil de ler */
+    margin: 50px 0; 
+}
+.sobre-nos-geral p {
+    font-size: 18px;      /* Aumenta o tamanho da fonte para 18px, tornando o texto mais legível e confortável para leitura */
+    line-height: 32px;    /* Define a altura da linha para 32px, criando um espaçamento vertical entre as linhas que melhora a legibilidade e evita que o texto fique amontoado */
+    text-align: justify;  /* Justifica o texto, alinhando as margens esquerda e direita para criar um bloco de texto mais uniforme e esteticamente agradável */
+    color: #444;    /* Aplica um tom de cinza escuro ao texto para reduzir o contraste agressivo do preto puro, tornando a leitura mais confortável para os olhos */
+}
 /* ==========================================================================
    NÍVEL 4: SELETORES DE ID E ELEMENTOS ANINHADOS (Mais Específicos)
    Regras cirúrgicas e de alto peso, focadas exclusivamente na barra de navegação do topo.
